@@ -4,8 +4,7 @@ import requests
 from datetime import date, timedelta
 import pandas as pd
 
-today = date.today()
-yesterday = today - datetime.timedelta(days=1)
+yesterday = date.today() - datetime.timedelta(days=1)
 
 wind_data = pd.read_json(str(yesterday)+'_wind.txt')
 total_wind = wind_data['value'].sum()
